@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    protected $fillable = ['quiz_id', 'question_text', 'answer'];
+    protected $fillable = ['quiz_id', 'question_text', 'answer', 'options'];
 
     // Relacja do quizu
     public function quiz()
