@@ -5,9 +5,12 @@
 
 <ul>
     @foreach($quiz->questions as $question)
-        <li>{{ $question->question_text }} — <strong>{{ $question->answer }}</strong></li>
+        <li class="question">
+            <span>{{ $question->question_text }}</span>
+            <strong>{{ $question->answer }}</strong>
+        </li>
     @endforeach
 </ul>
 
-<a href="{{ url('/quizzes') }}">Powrót do listy quizów</a>
+<a href="{{ url('/quizzes') }}" class="back-link">Powrót do listy quizów</a>
 @endsection
