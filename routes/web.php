@@ -1,13 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuizController;
 
-Route::get('/quizzes', function () {
-    // Możemy od razu przekazać przykładową tablicę quizów
-    $quizzes = [
-        'Quiz 1: PHP Basics',
-        'Quiz 2: Laravel Routing',
-        'Quiz 3: HTML & CSS'
-    ];
-    return view('quizzes', ['quizzes' => $quizzes]);
-});
+Route::get('/quizzes', [QuizController::class, 'index']); // lista quizów
+Route::get('/quizzes/{quiz}', [QuizController::class, 'show']); // pojedynczy quiz i jego pytania
